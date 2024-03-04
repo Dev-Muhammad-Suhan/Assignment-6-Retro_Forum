@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftLab Assignment-6</title>
+    <link rel="shortcut icon" href="./images/fev.png" type="image/x-icon">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Mulish", sans-serif;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/7d35260604.js" crossorigin="anonymous"></script>
+    <!-- Tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white">
+    <header class="container mx-auto">
+        <!-- Nav Bar -->
+        <nav class="mt-6">
+            <div class="navbar bg-base-100">
+                <div class="flex-1">
+                    <a
+                        class="btn btn-ghost px-0 text-4xl font-black  bg-gradient-to-r from-[#4347b8] to-[#101124] inline-block text-transparent bg-clip-text">SoftLab</a>
+                </div>
+                <div class="">
+                    <!-- Tooltip -->
+                    <div class="mr-3 lg:mr-6 flex gap-2 hidden md:inline lg:inline">
+                        <!-- 1 -->
+                        <div class="tooltip" data-tip="Home">
+                            <button class="btn btn-circle"><i class="fa-solid fa-house"></i></button>
+                        </div>
+
+                        <!-- 2 -->
+                        <div class="tooltip" data-tip="Edit">
+                            <button class="btn btn-circle"><i class="fa-solid fa-pen"></i></button>
+                        </div>
+
+                        <!-- 3 -->
+                        <div class="tooltip" data-tip="Add">
+                            <button class="btn btn-circle"><i class="fa-solid fa-user-plus"></i></button>
+                        </div>
+
+                        <!-- 4 -->
+                        <div class="tooltip" data-tip="Flag">
+                            <button class="btn btn-circle"><i class="fa-regular fa-font-awesome"></i></button>
+                        </div>
+
+                    </div>
+                    <!-- btn sign in -->
+                    <button class="btn bg-[#797DFC] px-8 font-bold rounded-full hover:bg-[#9195ff] text-white">Sign
+                        In</button>
+                    <!-- Tooltip-Mobile -->
+                    <div class="inline lg:hidden">
+                        <div class="dropdown dropdown-left">
+                            <div tabindex="0" role="button" class="btn m-1"><i class="fa-solid fa-bars"></i></div>
+                            <ul tabindex="0"
+                                class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-20 flex flex-col justify-center items-center gap-2">
+                                <li><button class="btn btn-circle"><i class="fa-solid fa-house"></i></button></li>
+                                <li><button class="btn btn-circle"><i class="fa-solid fa-pen"></i></button></li>
+                                <li><button class="btn btn-circle"><i class="fa-solid fa-user-plus"></i></button></li>
+                                <li><button class="btn btn-circle"><i class="fa-regular fa-font-awesome"></i></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- banner -->
+        <section class="mt-12">
+            <div class="p-6 md:p-7 lg:p-16 flex flex-col lg:flex-row items-center justify-between h-[500px] bg-center bg-no-repeat bg-cover rounded-3xl bg-clip-border"
+                style="background-image: url('./images/banner2.png');">
+                <!-- Banner Content -->
+                <div class="text-center md:text-start lg:text-start">
+                    <h1 class="text-3xl lg:text-6xl leading-tight font-black text-white">Welcome to the<br> <span
+                            class="bg-gradient-to-r from-[#797DFC] to-[#2e305f] inline-block text-transparent bg-clip-text">SoftLab</span>
+                        Forum</h1>
+                    <p class="my-5 text-base lg:text-xl font-medium text-white">Share your favorite opinion and win and
+                        wp forum coffee mug!</p>
+                    <div>
+                        <!-- Search -->
+                        <label class="input input-bordered flex items-center gap-2 rounded-full pr-2">
+                            <!-- Input -->
+                            <input id="input-field" type="text" class="grow" placeholder="Search" />
+
+                            <!-- BTN -->
+                            <button onclick="searchBtnClick()"
+                                class="btn px-5 btn-sm rounded-full text-white hover:bg-[#8a8eff] bg-[#797DFC]">Search</button>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="bg-white w-72 rounded-3xl h-48 p-3 lg:p-5 flex flex-col justify-between">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl lg:text-2xl font-medium">Registered Users</span>
+                        <span class="text-xl lg:text-2xl font-medium">01</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl lg:text-2xl font-medium">Forum</span>
+                        <span class="text-xl lg:text-2xl font-medium">05</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl lg:text-2xl font-medium">Topics</span>
+                        <span class="text-xl lg:text-2xl font-medium">03</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl lg:text-2xl font-medium">Replies</span>
+                        <span class="text-xl lg:text-2xl font-medium">02</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main class="container mx-auto">
+        <!-- Let’s Discuss Section -->
+        <section class="mt-24">
+            <!-- Content -->
+            <div class="text-center flex flex-col justify-between items-center">
+                <h1 class="text-4xl font-black mb-6">Let’s Discuss</h1>
+                <div class="w-3/4 lg:w-3/5 mb-12">
+                    <p class="text-lg font-normal text-gray-600">Yes, you can run unit tests and view the results
+                        directly within the app. The integrated testing features allow for a streamlined .</p>
+                </div>
+            </div>
+
+            <!-- Loading -->
+            <div id="loader" class="text-center hidden">
+                <span class="loading loading-bars loading-lg text-error"></span>
+            </div>
+            
+            <!-- Countdown -->
+
+            <!-- Dynamic Post Section -->
+            <div class="flex flex-col lg:flex-row gap-6 justify-between">
+
+                <!-- All Post Container -->
+                <div id="all-post" class="flex-1 flex flex-col gap-6 max-w-full lg:max-w-[60%]">
+                    <!-- Property by API -->
+                    <!-- Main Dynamic Div Container -->
+                </div>
+
+                <!-- Mark as Read Container-->
+                <div class="lg:w-2/5">
+                    <div class="bg-[#F3F3F5] p-6 rounded-3xl">
+                        <!-- Title -->
+                        <div class="flex justify-between mb-4">
+                            <div class="text-xl font-bold">Title</div>
+                            <div class="flex items-center justify-between gap-1"><i class="fa-solid fa-check-double"
+                                    style="color: #00bd84;"></i> Mark as read (<span id="mark-count">0</span>)</div>
+                        </div>
+
+                        <!-- Property by API -->
+                        <div id="mark-as-read" class="flex flex-col gap-4">
+                            <!-- Mark As Read Container -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Our Forum Section -->
+        <section class="mt-24">
+            <div class="flex flex-col lg:flex-row gap-4 p-6 bg-[#12132D] text-white rounded-3xl">
+                <div class="p-10">
+                    <h1 class="text-4xl font-black">Join Our Forum</h1>
+                    <p class=" text-gray-300 mt-4 mb-8">Share your favorite opinion and win and wp forum coffee mug!
+                        Yes, you can <br> run unit tests and view the results directly within the app. </p>
+                    <button class="btn rounded-full bg-[#797DFC] border-none text-white font-semibold">Registered
+                        Now</button>
+                </div>
+                <!-- Image -->
+                <div>
+                    <img src="./images/joinforum.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Posts Section -->
+        <section class="mt-24">
+            <!-- Content -->
+            <div class="text-center">
+                <h1 class="text-4xl font-black">Latest Posts</h1>
+                <p>Yes, you can run unit tests and view the results directly within the app.<br>The integrated testing
+                    features allow for a streamlined.</p>
+            </div>
+
+            <!-- Main Div -->
+            <!-- Tid is Latest Posts Container -->
+            <div id="Latest-Posts-Container" class="flex flex-col lg:flex-row gap-4 justify-between items-center mt-12">
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-24 bg-gradient-to-t from-[#ffffff] to-[#15214212]">
+        <div class="min-h-96 container mx-auto text-center">
+            <h1 class="pt-24 text-2xl font-black">ReTro</h1>
+            <p class="my-4 text-gray-500">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                roots in a piece of classical
+                Latin literature from 45 BC</p>
+            <div class="flex gap-4 items-center justify-center">
+                <span>
+                    <i class="fa-brands fa-twitter"></i>
+                </span>
+
+                <span>
+                    <i class="fa-brands fa-square-instagram"></i>
+                </span>
+
+                <span>
+                    <i class="fa-brands fa-facebook"></i>
+                </span>
+
+                <span>
+                    <i class="fa-brands fa-github"></i>
+                </span>
+            </div>
+            <hr class="border-dashed border-gray-300 my-12">
+            <p class="text-gray-400">2017, &copy; All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
